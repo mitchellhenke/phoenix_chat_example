@@ -7,6 +7,9 @@ defmodule Chat.UserSocket do
   transport :longpoll, Phoenix.Transports.LongPoll
 
   def connect(_params, socket) do
+    Phoenix.PubSub.Local.subscribers(Chat.PubSub.Local, "rooms:lobby") 
+    |> Enum.count 
+    |> IO.inspect
     {:ok, socket}
   end
 
