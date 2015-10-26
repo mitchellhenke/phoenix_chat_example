@@ -4,10 +4,11 @@ class App {
 
   static init(){
     let socket = new Socket("/socket", {
-      logger: ((kind, msg, data) => { console.log(`${kind}: ${msg}`, data) })
+      logger: ((kind, msg, data) => { console.log(`${kind}: ${msg}`, data) }),
+      user_id: "123"
     })
 
-    socket.connect({user_id: "123"})
+    socket.connect()
     var $status    = $("#status")
     var $messages  = $("#messages")
     var $input     = $("#message-input")
