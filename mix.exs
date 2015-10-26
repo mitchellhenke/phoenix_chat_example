@@ -4,7 +4,7 @@ defmodule Chat.Mixfile do
   def project do
     [app: :chat,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "~> 1.1",
      elixirc_paths: ["lib", "web"],
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -24,7 +24,7 @@ defmodule Chat.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~> 1.0.0"},
+    [{:phoenix, github: "phoenixframework/phoenix", override: true},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:phoenix_ecto, "~> 1.1"},
